@@ -1,0 +1,19 @@
+{% extends 'main/baza.html' %}
+
+{% block title %}
+Groups
+{% endblock %}
+
+{% block content %}
+     <table class ='table'>
+        <thead><th>Id</th><th>Name</th><th>Description</th><th>Actions</th></thead>
+        {% for g in group %}
+        <tr>
+            <td>{{ g.id }}</td>
+            <td>{{ g.name }}</td>
+            <td>{{ g.description }}</td>
+            <td><a href="edit_group/{{g.id}}">Edit</a> | <a href="delete_group/{{g.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

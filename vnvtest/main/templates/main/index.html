@@ -1,0 +1,19 @@
+{% extends 'main/baza.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead><th>Id</th><th>Date</th><th>Username</th><th>Group</th><th>Actions</th></thead>
+        {% for u in users %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.created_at }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.group }}</td>
+            <td><a href="edit_user/{{u.id}}">Edit</a> | <a href="delete_user/{{u.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

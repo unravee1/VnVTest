@@ -1,0 +1,18 @@
+{% extends 'main/baza.html' %}
+
+{% block title %}
+Create User
+{% endblock %}
+
+{% block content %}
+    <h1>Creating User</h1>
+    <form method="post" >
+        <div class="parent">
+        {%csrf_token%}
+
+        {{form}}
+
+        <button type="submit" class="btn btn-success">Create</button>
+        </div>
+    </form>
+{% endblock %}

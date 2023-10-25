@@ -1,0 +1,16 @@
+{% extends 'main/baza.html' %}
+
+{% block title %}
+Create Group
+{% endblock %}
+
+{% block content %}
+    <h1>Creating Group</h1>
+    <form method="post">
+         {% csrf_token %}
+        {{form}}
+
+        <button type="submit" class="btn btn-success">Create</button>
+
+    </form>
+{% endblock %}
